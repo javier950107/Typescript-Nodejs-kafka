@@ -18,6 +18,23 @@ const sendMessageKafka = async (req:Request, res:Response) =>{
     }
 }
 
+const messageKafka = (req: Request, res : Response) => {
+    try {
+        const {message} = req.body;
+        const upperCase : string = message.toUpperCase();
+
+        res.status(200).json({
+            status : 1,
+            msg : "Success!",
+            data : upperCase
+        });
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+
 export default{
-    sendMessageKafka
+    sendMessageKafka,
+    messageKafka
 }

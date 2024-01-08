@@ -7,6 +7,7 @@ const app = express();
 const jsonParser = bodyParser.json();
 
 app.post("/send",jsonParser,kafkaMessage.sendMessageKafka);
+app.post("/test",kafkaMessage.messageKafka);
 
 const kafkaConfig = new KafkaConfig();
 kafkaConfig.consume("my-topic", (value:string)=>{

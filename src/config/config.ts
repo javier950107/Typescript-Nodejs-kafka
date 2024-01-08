@@ -1,5 +1,5 @@
 import { Kafka } from "kafkajs";
-import { DataMessages } from "../../types";
+import { DataMessages } from "../types";
 
 class KafkaConfig {
 
@@ -24,7 +24,7 @@ class KafkaConfig {
                 messages: messages,
             });
         } catch (error) {
-            console.error(error);
+            console.log(error);
         } finally {
             await this.producer.disconnect();
         }
@@ -41,7 +41,7 @@ class KafkaConfig {
                 },
             });
         } catch (error) {
-            console.error(error);
+            console.log(error);
         }
     }
 }
